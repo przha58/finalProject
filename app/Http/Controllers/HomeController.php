@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\college__institues;
+use App\Models\departments;
+use App\Models\User;
+use App\Models\staff;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $data=[
+            ['name' => 'Users', 'icon' => 'bi bi-person', 'count' => User::count()], 
+            ['name' => 'staffs', 'icon' => 'bi bi-people', 'count' => staff::count()],
+            ['name' => 'College/Institues', 'icon' => 'bi bi-building', 'count' => college__institues::count()],
+            ['name' => 'Departments', 'icon' => 'bi bi-building', 'count' => departments::count()],
+           
+        ];
+        return view('admin.home', compact('data'));
     }
 }

@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container row">
-    {{-- @foreach ($data as $row)
-    <div class="col-4 p-2">
+     @foreach ($data as $row)
+    <div class="col-6 p-2">
         <div class="card pt-3">
             <div class=" d-flex justify-content-between align-items-center p-2">
                 <p>{{$row['name']}}</p>
@@ -14,6 +14,6 @@
             </div>
         </div>
     </div>
-    @endforeach --}}
+    @endforeach 
 </div>
 @endsection
